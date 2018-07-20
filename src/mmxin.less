@@ -1,0 +1,113 @@
+.PGroup(@x, @y) {
+    .P@{x}  {
+        font-size: @y;
+        font-weight: normal;
+    }
+    .P@{x}B  {
+      font-size: @y;
+      font-weight: bold;
+    }
+    .P@{x}B-FD {
+      font-size: @y;
+      font-weight: bold;
+      color: @ft_dark;
+    }
+    .P@{x}B-FL {
+      font-size: @y;
+      font-weight: bold;
+      color: @ft_light;
+    }
+    .P@{x}B-FLi {
+      font-size: @y;
+      font-weight: bold;
+      color: @ft_link;
+    }
+
+    .P@{x}-FL {
+      font-size: @y;
+      font-weight: normal;
+      color: @ft_light;
+    }
+    .P@{x}-FD {
+      font-size: @y;
+      font-weight: normal;
+      color: @ft_dark;
+    }
+    .P@{x}-FLi {
+      font-size: @y;
+      font-weight: normal;
+      color: @ft_link;
+    }
+
+
+}
+.PGroup(1, 14px);
+.PGroup(2, 16px);
+.PGroup(3, 18px);
+.PGroup(4, 24px);
+.PGroup(5, 36px);
+
+
+
+@screen-xs-min: 480px;
+@screen-sm-min: 768px;
+@screen-md-min: 992px;
+@screen-lg-min: 1200px;
+
+@screen-xxs-max: (@screen-xs-min - 1);
+@screen-xs-max: (@screen-sm-min - 1);
+@screen-sm-max: (@screen-md-min - 1);
+@screen-md-max: (@screen-lg-min - 1);
+
+.media-xxs(@rules) {
+    @media screen and (max-width: @screen-xxs-max) {
+        @rules();
+    }
+}
+
+.media-above-xxs(@rules) {
+    @media screen and (min-width: @screen-xs-min) {
+        @rules();
+    }
+}
+
+.media-xs(@rules) {
+    @media screen and (max-width: @screen-xs-max) {
+        @rules();
+    }
+}
+.media-sm(@rules) {
+    @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+        @rules();
+    }
+}
+.media-md(@rules) {
+    @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+        @rules();
+    }
+}
+.media-lg(@rules) {
+    @media screen and (min-width: @screen-lg-min) {
+        @rules();
+    }
+}
+.media-sm-and-above(@rules) {
+    @media screen and (min-width: @screen-sm-min) {
+        @rules();
+    }
+}
+.media-md-and-above(@rules) {
+    @media screen and (min-width: @screen-md-min) {
+        @rules();
+    }
+}
+.media-sm-and-below(@rules) {
+    @media screen and (max-width: @screen-sm-max) {
+        @rules();
+    }
+}
+.media-md-and-below(@rules) {
+    @media screen and (max-width: @screen-md-max) {
+        @rules();
+    }
+}
